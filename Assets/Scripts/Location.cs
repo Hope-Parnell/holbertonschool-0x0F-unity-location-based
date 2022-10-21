@@ -124,9 +124,9 @@ public class Location : MonoBehaviour
     }
 
     public void placeMarker(){
-        Vector3 placement = GPSEncoder.GPSToUCS(currentPos.latitude, currentPos.longitude);
-        logText.gameObject.SetActive(true);
-        logText.text = $"Attempting to Place marker at {placement.x,0:3}, {placement.y,0:3}, {placement.z,0:3}";
-        GameObject newMarker = Instantiate(marker, placement, Quaternion.identity);
+        // Vector3 placement = GPSEncoder.GPSToUCS(currentPos.latitude, currentPos.longitude);
+        // logText.gameObject.SetActive(true);
+        // logText.text = $"Attempting to Place marker at {placement.x,0:N3}, {placement.y,0:N3}, {placement.z,0:N3}";
+        GameObject newMarker = Instantiate(marker, Camera.main.transform.position, Quaternion.identity);
     }
 }
